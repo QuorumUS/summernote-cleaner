@@ -76,6 +76,9 @@
             var aS = new RegExp(' ' + bA[ii] + '=[\'|"](.*?)[\'|"]', 'gi');
                out = out.replace(aS, '');
           }
+          if (options.cleaner.additionalCleaningFunction) {
+            out = options.cleaner.additionalCleaningFunction(out)
+          }
         }
         return out;
       };
